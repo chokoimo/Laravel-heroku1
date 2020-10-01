@@ -55,12 +55,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
      
      Route::get('profile/edit', 'Admin\ProfileController@edit');//Laravel13　課題6
      Route::post('profile/edit' ,'Admin\ProfileController@update');//Laravel13　課題6
-     Route::get('profile/delete', 'Admin\ProfileController@delete');//Laravel
+     Route::get('profile/delete', 'Admin\ProfileController@delete');//Laravel　17
      
      Route::get('news', 'Admin\NewsController@index');//Laravel 15
-     Route::get('profile', 'Admin\ProfileController@index');
+     Route::get('profile', 'Admin\ProfileController@index');//Laravel 17
      
      Route::get('news/edit', 'Admin\NewsController@edit');//Laravel 16
      Route::post('news/edit', 'Admin\NewsController@update');//Laravel 16
      Route::get('news/delete', 'Admin\NewsController@delete');//Laravel 16
+     
+     
+     
 });
+Route::get('/', 'NewsController@index');
+Route::get('/profile', 'ProfileController@index');
